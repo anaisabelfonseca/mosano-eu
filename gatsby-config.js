@@ -6,4 +6,14 @@
 
 module.exports = {
   /* Your site config here */
+  plugins: [
+    {
+      resolve: `gatsby-source-graphql-universal`,
+      options: {
+        typeName: `Prime`,
+        fieldName: `prime`,
+        url: `https://mosano-eu.herokuapp.com/graphql`,
+      },
+    },
+  ],
 }
