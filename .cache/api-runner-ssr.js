@@ -1,6 +1,6 @@
 var plugins = [{
-      plugin: require('/Users/afonseca/Documents/coding/mosano-eu/node_modules/gatsby-source-graphql-universal/gatsby-ssr'),
-      options: {"plugins":[],"typeName":"Prime","fieldName":"prime","url":"https://mosano-eu.herokuapp.com/graphql"},
+      plugin: require('/Users/afonseca/Documents/coding/mosano-eu/node_modules/gatsby-source-prismic-graphql/gatsby-ssr'),
+      options: {"plugins":[],"repositoryName":"mosano-eu","accessToken":"MC5YUzlRbkJFQUFDUUFOLWdH.Bw_vv70t77-977-977-977-9f--_ve-_vWrvv70aTiXvv70877-977-9DWsCLe-_vXnvv71Mau-_ve-_vW4","pages":[{"type":"Article","match":"/article/:uid","path":"/article"}]},
     }]
 // During bootstrap, we write requires at top of this file which looks like:
 // var plugins = [

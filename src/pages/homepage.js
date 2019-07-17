@@ -1,4 +1,4 @@
-import { graphql } from 'gatsby'
+/*import { graphql } from 'gatsby'
 
 // const htmlToReactParser = new Parser()
 
@@ -55,3 +55,4 @@ export const pageQuery = graphql`
     }
   }
 `
+*/

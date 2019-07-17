@@ -38,6 +38,10 @@ header {
   height: 70px;
 }
 
+.page-content {
+  padding-top: 70px;
+}
+
 .button {
   margin-bottom: 25px;
   border: none;
