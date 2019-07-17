@@ -1,4 +1,8 @@
-/*
+import React from 'react'
+
+export default () => (
+  <div>Hello world!</div>
+) /*
 import { graphql } from 'gatsby'
 import React from 'react'
 import Footer from '../Layout/footer'
