@@ -6,42 +6,42 @@ const Layout = props => {
   return (
     <div className="viewport">
       <header className="header">
-        <input type="checkbox" id="nav-toggle" class="nav-toggle" />
+        <input type="checkbox" id="nav-toggle" className="nav-toggle" />
         <nav>
           <ul>
             <li>
-              <a href="../pages/homepage.js" id="homepage">
+              <a href="/" id="homepage">
                 Home
               </a>
             </li>
             <li>
-              <a href="../pages/how.js" id="how">
+              <a href="/how" id="how">
                 How
               </a>
             </li>
             <li>
-              <a href="../pages/what.js" id="what">
+              <a href="/what" id="what">
                 What
               </a>
             </li>
             <li>
-              <a href="../pages/who.js" id="who">
+              <a href="/who" id="who">
                 Who
               </a>
             </li>
             <li>
-              <a href="../pages/contact.js" id="contact">
+              <a href="/contact" id="contact">
                 Contact
               </a>
             </li>
             <li>
-              <a href="../pages/joinUs.js" id="joinUs">
+              <a href="/joinUs" id="joinUs">
                 Join Us
               </a>
             </li>
             <li>
-              <select onchange="setLanguageVariables(this.value)">
-                <option value="eng" href="#eng" data-reload selected>
+              <select>
+                <option value="eng" href="#eng" data-reload>
                   English
                 </option>
                 <option value="pt" href="#pt" data-reload>
@@ -56,8 +56,8 @@ const Layout = props => {
       <div className="page-content">
         {props.children}
 
-        <a class="fix-me button" href="">
-          <img src={ArrowImg} />
+        <a className="fix-me button" href="">
+          <img src={ArrowImg} alt="" />
         </a>
       </div>
     </div>

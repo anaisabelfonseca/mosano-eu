@@ -1,74 +1,167 @@
-/*import { graphql } from 'gatsby'
+import React from 'react'
+import Footer from '../Layout/footer'
+import Layout from '../Layout/layout'
 
-// const htmlToReactParser = new Parser()
+export default props => {
+  const { data } = props
+  const content = data.prismicHow.data
+  const pageName = content.title.text
 
-export default ({ data: { prime } }) => {
-  const title = prime.HomePage.howPage.howTitle
-  const content = prime.HomePage.howPage
-  const usedTechnologies = content.usedTechnologies
-  const usedServices = content.usedServices
-  const usedProcesses = content.usedProcesses
+  const sections = content.body.map(section => {
+    if (section.slice_type === 'technologies') {
+      const techsTitle = section.primary.technologies_title.text
+      const items = section.items.map(item => {
+        const techtitle = item.tech_title.text
+        // LATER ADD IMAGE!!!
+        // const techImage = item.tech_image.url
+        const techDescription = item.tech_description.text
 
-  // const technologySection = usedTechnologies.map(section => {
-  //   const sliceTitle = section.title
-  //   const items = section.usedTechnology.map(
-  //     htmlToReactParser.parse(technologyName),
-  //     htmlToReactParser.parse(technologyImage),
-  //     htmlToReactParser.parse(technologyDescription)
-  //   )
-  // })
+        return (
+          <div>
+            <h3>{techtitle}</h3>
+            <p>{techDescription}</p>
+          </div>
+        )
+      })
 
-  console.log(usedTechnologies.Prime_Technologies.title)
+      return (
+        <div className="technologies">
+          <h2>{techsTitle}</h2>
+          <div>
+            <p>{items}</p>
+          </div>
+        </div>
+      )
+    }
 
-  // const serviceSection = usedServices.map(section => {
-  //   const sliceTitle = section.serviceTitle
-  //   const items = section.usedServices.map(
-  //     htmlToReactParser.parse(technologyName),
-  //     htmlToReactParser.parse(technologyImage),
-  //     htmlToReactParser.parse(technologyDescription)
-  //   )
-  // })
+    if (section.slice_type === 'services') {
+      const servsTitle = section.primary.services_title.text
+      const items = section.items.map(item => {
+        const servtitle = item.service_title.text
+        // LATER ADD IMAGE!!!
+        // const servImage = item.service_image.url
+        const servDescription = item.service_description.text
 
-  return null
+        return (
+          <div>
+            <h3>{servtitle}</h3>
+            <p>{servDescription}</p>
+          </div>
+        )
+      })
+
+      return (
+        <div className="services">
+          <h2>{servsTitle}</h2>
+          <div>{items}</div>
+        </div>
+      )
+    }
+
+    if (section.slice_type === 'processes') {
+      const procsTitle = section.primary.processes_title.text
+      const items = section.items.map(item => {
+        const proctitle = item.process_title.text
+        // LATER ADD IMAGE!!!
+        // const procImage = item.process_image.url
+        const procDescription = item.process_description.text
+
+        return (
+          <div>
+            <h3>{proctitle}</h3>
+            <p>{procDescription}</p>
+          </div>
+        )
+      })
+
+      return (
+        <div className="processes">
+          <h2>{procsTitle}</h2>
+          <div>{items}</div>
+        </div>
+      )
+    }
+
+    return null
+  })
+
+  return (
+    <div>
+      <Layout>
+        <div>
+          <h1>{pageName}</h1>
+          {sections}
+        </div>
+      </Layout>
+      <Footer />
+    </div>
+  )
 }
 
 export const pageQuery = graphql`
   query {
-    prime {
-      HomePage {
-        howPage {
-          howTitle
-          usedTechnologies {
-            ... on Prime_Technologies {
-              title
-              usedTechnology {
-                ... on Prime_Technology {
-                  technologyName
-                  technologyImage
-                  technologyDescription
+    prismicHow {
+      data {
+        title {
+          text
+        }
+        body {
+          ... on PrismicHowBodyTechnologies {
+            slice_type
+            primary {
+              technologies_title {
+                text
+              }
+            }
+            items {
+              tech_title {
+                text
+              }
+              tech_image {
+                localFile {
+                  url
                 }
+              }
+              tech_description {
+                text
+              }
+            }
+            __typename
+          }
+          ... on PrismicHowBodyServices {
+            slice_type
+            primary {
+              services_title {
+                text
+              }
+            }
+            items {
+              service_title {
+                text
+              }
+              service_description {
+                text
               }
             }
           }
-          usedServices {
-            ... on Prime_Services {
-              serviceTitle
-              usedServices {
-                ... on Prime_Service {
-                  serviceTitle
-                  serviceDescription
-                }
+          ... on PrismicHowBodyProcesses {
+            slice_type
+            primary {
+              processes_title {
+                text
               }
             }
-          }
-          usedProcesses {
-            ... on Prime_Processes {
-              processesTitle
-              usedProcess {
-                ... on Prime_Process {
-                  processTitle
-                  processDescription
+            items {
+              process_title {
+                text
+              }
+              process_image {
+                localFile {
+                  url
                 }
+              }
+              process_description {
+                text
               }
             }
           }
@@ -77,4 +170,3 @@ export const pageQuery = graphql`
     }
   }
 `
-*/
