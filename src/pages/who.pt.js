@@ -62,7 +62,7 @@ export default props => {
 
   return (
     <div>
-      <Layout>
+      <Layout {...props}>
         <div>
           <h1>{pageName}</h1>
           {sections}
@@ -92,6 +92,23 @@ export const pageQuery = graphql`
             }
             items {
               person_name {
+                text
+              }
+            }
+          }
+          ... on PrismicWhoBodyValues {
+            slice_type
+            primary {
+              values_title {
+                text
+              }
+            }
+            items {
+              description {
+                text
+              }
+
+              value_title {
                 text
               }
             }

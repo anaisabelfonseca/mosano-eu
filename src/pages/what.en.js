@@ -21,7 +21,7 @@ export default props => {
         return (
           <div>
             <ul>
-              <a href={caseLink}>{caseTitle}</a>
+              <a href={'/en' + caseLink}>{caseTitle}</a>
               <p>{caseDescription}</p>
             </ul>
           </div>
@@ -41,7 +41,7 @@ export default props => {
 
   return (
     <div>
-      <Layout>
+      <Layout {...props}>
         <h1>{pageName}</h1>
         <div>{sections}</div>
       </Layout>

@@ -13,7 +13,7 @@ export default props => {
 
   return (
     <div>
-      <Layout>
+      <Layout {...props}>
         <h1>{offerName}</h1>
         <div>
           <p>{jobDesc}</p>
@@ -26,8 +26,8 @@ export default props => {
 }
 
 export const pageQuery = graphql`
-  query($uid: String!) {
-    prismicJobOffers(uid: { eq: $uid }) {
+  query($uid: String!, $lang: String!) {
+    prismicJobOffers(uid: { eq: $uid }, lang: { eq: $lang }) {
       data {
         job_description {
           text

@@ -87,7 +87,7 @@ export default props => {
 
   return (
     <div>
-      <Layout>
+      <Layout {...props}>
         <div>
           <h1>{pageName}</h1>
           {sections}

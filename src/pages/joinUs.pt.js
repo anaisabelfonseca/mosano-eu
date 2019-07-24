@@ -44,7 +44,7 @@ export default props => {
         return (
           <div>
             <ul>
-              <a href={offerLink}>{offerTitle}</a>
+              <a href={'/pt' + offerLink}>{offerTitle}</a>
             </ul>
           </div>
         )
@@ -63,7 +63,7 @@ export default props => {
 
   return (
     <div>
-      <Layout>
+      <Layout {...props}>
         <h1>{pageName}</h1>
         <div>{sections}</div>
       </Layout>

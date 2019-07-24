@@ -13,7 +13,7 @@ export default props => {
 
   return (
     <div>
-      <Layout>
+      <Layout {...props}>
         <h1>{pageName}</h1>
         <p>{address}</p>
         <p>{email}</p>

@@ -7,6 +7,8 @@ export default props => {
   const content = data.prismicWho.data
   const pageName = content.title.text
 
+  console.log(content)
+
   const sections = content.body.map(section => {
     if (section.slice_type === 'values') {
       const valuesTitle = section.primary.values_title.text
@@ -62,7 +64,7 @@ export default props => {
 
   return (
     <div>
-      <Layout>
+      <Layout {...props}>
         <div>
           <h1>{pageName}</h1>
           {sections}
@@ -92,6 +94,23 @@ export const pageQuery = graphql`
             }
             items {
               person_name {
+                text
+              }
+            }
+          }
+          ... on PrismicWhoBodyValues {
+            slice_type
+            primary {
+              values_title {
+                text
+              }
+            }
+            items {
+              description {
+                text
+              }
+
+              value_title {
                 text
               }
             }

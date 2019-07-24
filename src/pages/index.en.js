@@ -14,7 +14,7 @@ export default props => {
 
   return (
     <div className="Homepage">
-      <Layout>
+      <Layout {...props}>
         <h1>{pageTitle}</h1>
       </Layout>
       <Footer />
