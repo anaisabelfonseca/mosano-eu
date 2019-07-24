@@ -10,41 +10,41 @@ const Layout = props => {
         <nav>
           <ul>
             <li>
-              <a href="/" id="homepage">
+              <a href="/en" id="homepage">
                 Home
               </a>
             </li>
             <li>
-              <a href="/how" id="how">
+              <a href="/en/how" id="how">
                 How
               </a>
             </li>
             <li>
-              <a href="/what" id="what">
+              <a href="/en/what" id="what">
                 What
               </a>
             </li>
             <li>
-              <a href="/who" id="who">
+              <a href="/en/who" id="who">
                 Who
               </a>
             </li>
             <li>
-              <a href="/contact" id="contact">
+              <a href="/en/contact" id="contact">
                 Contact
               </a>
             </li>
             <li>
-              <a href="/joinUs" id="joinUs">
+              <a href="/en/joinUs" id="joinUs">
                 Join Us
               </a>
             </li>
             <li>
               <select>
-                <option value="eng" href="#eng" data-reload>
+                <option value="eng" href="#en-gb" data-reload>
                   English
                 </option>
-                <option value="pt" href="#pt" data-reload>
+                <option value="pt" href="#pt-pt" data-reload>
                   Portugues
                 </option>
               </select>
