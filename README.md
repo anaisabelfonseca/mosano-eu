@@ -39,11 +39,11 @@ I used technologies such as Gatsby [![gatsby logo](/gatsby-logo.png)](https://ww
 
 Within the project we used [JSX](https://reactjs.org/docs/introducing-jsx.html) files as templates, these files are recommended to use with React and they describe how the UI should look like. JSX is a preprocessor step that adds XML syntax to JavaScript. You can definitely use React without JSX but JSX makes React a lot more elegant. It may remind you of HTML, but It gives you the power to code Javascript pratically anywhere.
 
-#### Prismic
+#### Prismic [![Prismic logo](prismic-logo.png)](https://prismic.io/docs "Documentation")
 
 Prismic in a headless CMS, which is a back-end only content management system (CMS) built from the ground up as a content repository that makes content accessible via a RESTful API for display on any device... which means Prismic provides editing and publishing tools and exposes a powerful API. It is a content database. However, the main focus of Prismic is to give developers the ability to give content freedom to publishers and marketers.
 
-#### Emotion
+#### Emotion [![Emotion logo](emotion-logo.png)](https://emotion.sh/docs/introduction "Documentation")
 
 [Emotion](https://github.com/emotion-js/emotion) is a performant and flexible CSS-in-JS library. Building on many other CSS-in-JS libraries, it allows you to style apps quickly with string or object styles. It has predictable composition to avoid specificity issues with CSS. With source maps and labels, Emotion has a great developer experience and great performance with heavy caching in production.
 
