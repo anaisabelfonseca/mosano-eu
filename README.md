@@ -49,7 +49,9 @@ Within the project we used [JSX](https://reactjs.org/docs/introducing-jsx.html) 
 
 ### Project Description
 
-During my Mosano-EU project I used a variety of technologies that supported my web application. In my web application I have 6 pages: the Homepage, What, Who, How, Contact and Join Us pages.
+During my Mosano-EU project I used a variety of technologies that supported my web application. In my web application I have 6 pages: the Homepage, What, Who, How, Contact and Join Us pages. In each of these the content isn't specified.
+
+![Schema](/schema.png)
 
 
 **Contributors:** [Mosano](https://mosano.eu/) [![facebook](/facebook-logo-button.png)](https://facebook.com/mosanotech/ "Facebook") [![instagram](/instagram-logo.png)](https://www.instagram.com/mosanotech/?hl=en "Instagram") [![LinkedIn](/linkedin-logo-button.png)](https://www.linkedin.com/company/mosano "LinkedIn")
