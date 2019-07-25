@@ -41,8 +41,8 @@ export default props => {
 }
 
 export const pageQuery = graphql`
-  query {
-    prismicContact(lang: { eq: "en-gb" }) {
+  query($lang: String!) {
+    prismicContact(lang: { eq: $lang }) {
       data {
         title {
           text

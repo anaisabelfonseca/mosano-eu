@@ -44,7 +44,7 @@ export default props => {
         return (
           <div>
             <ul>
-              <a href={'/pt' + offerLink}>{offerTitle}</a>
+              <a href={'/en' + offerLink}>{offerTitle}</a>
             </ul>
           </div>
         )
@@ -73,8 +73,8 @@ export default props => {
 }
 
 export const pageQuery = graphql`
-  query {
-    prismicJoinus(lang: { eq: "pt-pt" }) {
+  query($lang: String!) {
+    prismicJoinus(lang: { eq: $lang }) {
       data {
         title {
           text

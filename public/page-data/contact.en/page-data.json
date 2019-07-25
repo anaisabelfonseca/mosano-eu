@@ -1,1 +1,1 @@
-{"componentChunkName":"component---src-pages-contact-en-js","path":"/contact.en/","webpackCompilationHash":"","result":{"pageContext":{"isCreatedByStatefulCreatePages":true}}}
+{"componentChunkName":"component---src-pages-contact-en-js","path":"/contact.en/","webpackCompilationHash":"55cd132be5de86efd3b7","result":{"data":{"prismicContact":{"data":{"title":{"text":"Contacts"},"address":{"text":"Abc Street"},"email":{"text":"abc@def.gh"}}}},"pageContext":{"isCreatedByStatefulCreatePages":true}}}

@@ -21,7 +21,7 @@ export default props => {
         return (
           <div>
             <ul>
-              <a href={'/pt' + caseLink}>{caseTitle}</a>
+              <a href={'/en' + caseLink}>{caseTitle}</a>
               <p>{caseDescription}</p>
             </ul>
           </div>
@@ -51,8 +51,8 @@ export default props => {
 }
 
 export const pageQuery = graphql`
-  query {
-    prismicWhat(lang: { eq: "pt-pt" }) {
+  query($lang: String!) {
+    prismicWhat(lang: { eq: $lang }) {
       data {
         title {
           text

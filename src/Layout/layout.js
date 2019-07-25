@@ -4,8 +4,18 @@ import './layout.css'
 
 const Layout = props => {
   let language = 'en'
-  console.log(language)
-  console.log(props.pageContext.slug)
+  if (
+    !!props.pageContext &&
+    (!!props.pageContext.slug || !!props.pageContext.lang)
+  ) {
+    try {
+      language = !!props.pageContext.slug
+        ? props.pageContext.slug.split('/')[1]
+        : props.pageContext.lang.split('-')[0]
+    } catch (e) {
+      console.log(e)
+    }
+  }
 
   return (
     <div className="viewport">
@@ -14,32 +24,32 @@ const Layout = props => {
         <nav>
           <ul>
             <li key="homepage">
-              <a href="/en" id="homepage">
+              <a href={`/${language}`} id="homepage">
                 Home
               </a>
             </li>
             <li key="how">
-              <a href="/en/how" id="how">
+              <a href={`/${language}/how`} id="how">
                 How
               </a>
             </li>
             <li key="what">
-              <a href="/en/what" id="what">
+              <a href={`/${language}/what`} id="what">
                 What
               </a>
             </li>
             <li key="who">
-              <a href="/en/who" id="who">
+              <a href={`/${language}/who`} id="who">
                 Who
               </a>
             </li>
             <li key="contact">
-              <a href="/en/contact" id="contact">
+              <a href={`/${language}/contact`} id="contact">
                 Contact
               </a>
             </li>
             <li key="joinUs">
-              <a href="/en/joinUs" id="joinUs">
+              <a href={`/${language}/joinus`} id="joinUs">
                 Join Us
               </a>
             </li>

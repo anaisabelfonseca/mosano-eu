@@ -1,1 +1,1 @@
-{"componentChunkName":"component---src-pages-index-pt-js","path":"/pt/","webpackCompilationHash":"55cd132be5de86efd3b7","result":{"data":{"prismicHomepage":{"data":{"title":{"text":"Página Inicial"}}}},"pageContext":{"isCreatedByStatefulCreatePages":true,"slug":"/pt/","langKey":"pt"}}}
+{"componentChunkName":"component---src-templates-index-jsx","path":"/pt","webpackCompilationHash":"55cd132be5de86efd3b7","result":{"data":{"prismicHomepage":{"data":{"title":{"text":"Página Inicial"}}}},"pageContext":{"isCreatedByStatefulCreatePages":false,"lang":"pt-pt"}}}

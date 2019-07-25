@@ -18,13 +18,13 @@ module.exports = {
         linkResolver: ({ node, key, value }) => post => `/${post.uid}`,
       },
     },
-
+    /*
     {
       resolve: 'gatsby-plugin-i18n',
       options: {        
         langKeyDefault: 'en',
         useLangKeyLayout: false
       }
-    },
+    },*/
   ],
 }
