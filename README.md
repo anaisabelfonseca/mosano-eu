@@ -2,8 +2,7 @@
 
 Since the 8th of July to the 31st, I worked along side with **Mosano** in an internship, focusing my work in front-end web development. Mosano provides custom software services and focuses on web and mobile application development.
 
-I used technologies such as Gatsby, Graphql, React, Prismic and Emotion. 
-
+I used technologies such as Gatsby, Graphql, React, Prismic and Emotion.
 [![gatsby logo](/gatsby-logo.png)](https://www.gatsbyjs.org/docs "Documentation") 
 [![graphql logo](GraphQL_Logo.svg.png)](https://graphql.org/learn "Documentation")
 [![react logo](React.js_logo-512.png)](https://reactjs.org/docs/getting-started.html#learn-react "Documentation")
