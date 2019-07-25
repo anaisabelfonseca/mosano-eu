@@ -2,6 +2,7 @@ import React from 'react'
 import Footer from '../Layout/footer'
 import Layout from '../Layout/layout'
 
+//This is where the page layout is
 export default props => {
   const { data } = props
   const content = data.prismicWho.data
@@ -75,6 +76,7 @@ export default props => {
   )
 }
 
+//This is the query that retrieves all the who page's information
 export const pageQuery = graphql`
   query($lang: String!) {
     prismicWho(lang: { eq: $lang }) {

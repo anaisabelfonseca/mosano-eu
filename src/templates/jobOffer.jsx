@@ -4,6 +4,8 @@ import Footer from '../Layout/footer'
 import Layout from '../Layout/layout'
 
 // const container = css``
+
+//This is where the page layout is
 export default props => {
   const { data } = props
   const content = data.prismicJobOffers.data
@@ -25,6 +27,7 @@ export default props => {
   )
 }
 
+//This is the query that retrieves all the job offer page's information
 export const pageQuery = graphql`
   query($uid: String!, $lang: String!) {
     prismicJobOffers(uid: { eq: $uid }, lang: { eq: $lang }) {

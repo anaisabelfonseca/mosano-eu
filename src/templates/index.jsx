@@ -11,6 +11,7 @@ const container = css`
   color: #333333;
 `
 
+//This is where the page layout is
 export default props => {
   const { data } = props
   const pageTitle = data.prismicHomepage.data.title.text
@@ -33,6 +34,7 @@ export default props => {
   )
 }
 
+//This is the query that retrieves all the homepage's information
 export const pageQuery = graphql`
   query($lang: String!) {
     prismicHomepage(lang: { eq: $lang }) {

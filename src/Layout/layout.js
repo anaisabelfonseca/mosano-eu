@@ -4,6 +4,8 @@ import './layout.css'
 
 const Layout = props => {
   var language = 'en'
+
+  //This where we guarantee that, when the user chooses a language, every page will appear in the same lang
   if (
     !!props.pageContext &&
     (!!props.pageContext.slug || !!props.pageContext.lang)
@@ -24,6 +26,8 @@ const Layout = props => {
   var contact = 'Contact'
   var joinUs = 'Join Us'
 
+  /* This is to guarantee that when the user chooses language the 
+  selected option in the nav bar will be the same accordingly */
   const renderOption = (langCode, langName) => (
     <option value={langCode} data-reload>
       {langName}

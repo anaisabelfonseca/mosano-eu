@@ -2,6 +2,7 @@ import React from 'react'
 import Footer from '../Layout/footer'
 import Layout from '../Layout/layout'
 
+//This is where the page layout is
 export default props => {
   const { data } = props
   const content = data.prismicHow.data
@@ -98,6 +99,7 @@ export default props => {
   )
 }
 
+//This is the query that retrieves all the how page's information
 export const pageQuery = graphql`
   query($lang: String!) {
     prismicHow(lang: { eq: $lang }) {

@@ -3,6 +3,10 @@ const path = require('path')
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
 
+  /* These are queries which get basic information from Prismic about the page, in this case, the page ID,
+   lang (in this case pt-pt and en-gb) and the UID. The UID is used in the url path */
+
+   // This query is for the homepage
   const index = await graphql(`
     query {
       allPrismicHomepage {
@@ -16,6 +20,7 @@ exports.createPages = async ({ graphql, actions }) => {
     }
   `)
 
+  // This query is for the how page
   const how = await graphql(`
     query {
       allPrismicHow {
@@ -30,6 +35,7 @@ exports.createPages = async ({ graphql, actions }) => {
     }
   `)
 
+  // This query is for the what page
   const what = await graphql(`
     query {
       allPrismicWhat {
@@ -44,6 +50,7 @@ exports.createPages = async ({ graphql, actions }) => {
     }
   `)
 
+  // This query is for the who page  
   const who = await graphql(`
     query {
       allPrismicWho {
@@ -58,6 +65,7 @@ exports.createPages = async ({ graphql, actions }) => {
     }
   `)
 
+  // This query is for the contact page  
   const contact = await graphql(`
     query {
       allPrismicContact {
@@ -72,6 +80,7 @@ exports.createPages = async ({ graphql, actions }) => {
     }
   `)
 
+  // This query is for the join us page  
   const joinUs = await graphql(`
     query {
       allPrismicJoinus {
@@ -86,6 +95,9 @@ exports.createPages = async ({ graphql, actions }) => {
     }
   `)
 
+/* The next two are a bit different since there can be multiple of them, but they do basically the same */
+
+//It gets the ID, UID and lang of each job offer
   const jobOffers = await graphql(`
     {
       allPrismicJobOffers {
@@ -99,6 +111,8 @@ exports.createPages = async ({ graphql, actions }) => {
       }
     }
   `)
+
+//It gets the ID, UID and lang of each Case Studies
   const caseStudies = await graphql(`
     {
       allPrismicCaseStudies {
@@ -113,6 +127,7 @@ exports.createPages = async ({ graphql, actions }) => {
     }
   `)
 
+  // Redirects to the jsx template, then used in the createPage function
   const templateHomepage = path.resolve('src/templates/index.jsx')
   const templateHow = path.resolve('src/templates/how.jsx')
   const templateWhat = path.resolve('src/templates/what.jsx')
@@ -122,8 +137,12 @@ exports.createPages = async ({ graphql, actions }) => {
   const templateJobOffer = path.resolve('src/templates/jobOffer.jsx')
   const templateCaseStudy = path.resolve('src/templates/caseStudy.jsx')
 
+  /* The following code creates pt-pt and en-gb (in this particular case) for each page
+   sending (through context) the template query the language in which we want It to run*/
+
+// INDEX
   index.data.allPrismicHomepage.edges.forEach(edge => {
-    if (edge.node.lang.substring(0, 2) === 'en') {
+    if (edge.node.lang.substring(0, 2) === 'en') { //This is where we defined the index page and default language.
       createPage({
         path: '/',
         component: templateHomepage,
@@ -141,6 +160,7 @@ exports.createPages = async ({ graphql, actions }) => {
     })
   })
 
+// HOW
   how.data.allPrismicHow.edges.forEach(edge => {
     createPage({
       path: `/${edge.node.lang.substring(0, 2)}/${edge.node.uid}`,
@@ -151,6 +171,7 @@ exports.createPages = async ({ graphql, actions }) => {
     })
   })
 
+// WHAT
   what.data.allPrismicWhat.edges.forEach(edge => {
     createPage({
       path: `/${edge.node.lang.substring(0, 2)}/${edge.node.uid}`,
@@ -161,6 +182,7 @@ exports.createPages = async ({ graphql, actions }) => {
     })
   })
 
+// WHO  
   who.data.allPrismicWho.edges.forEach(edge => {
     createPage({
       path: `/${edge.node.lang.substring(0, 2)}/${edge.node.uid}`,
@@ -171,6 +193,7 @@ exports.createPages = async ({ graphql, actions }) => {
     })
   })
 
+// CONTACT  
   contact.data.allPrismicContact.edges.forEach(edge => {
     createPage({
       path: `/${edge.node.lang.substring(0, 2)}/${edge.node.uid}`,
@@ -181,6 +204,7 @@ exports.createPages = async ({ graphql, actions }) => {
     })
   })
 
+// JOIN US  
   joinUs.data.allPrismicJoinus.edges.forEach(edge => {
     createPage({
       path: `/${edge.node.lang.substring(0, 2)}/${edge.node.uid}`,
@@ -191,6 +215,11 @@ exports.createPages = async ({ graphql, actions }) => {
     })
   })
 
+  /* These cases are particularly different since there can be multiple pages
+  For that same reason, we need to send the page UID to make sure we are getting the correct information
+  The UID is the page's indentification */
+
+// JOB OFFERS
   jobOffers.data.allPrismicJobOffers.edges.forEach(edge => {
     createPage({
       path: `/${edge.node.lang.substring(0, 2)}/${edge.node.uid}`,
@@ -202,6 +231,7 @@ exports.createPages = async ({ graphql, actions }) => {
     })
   })
 
+// CASE STUDIES  
   caseStudies.data.allPrismicCaseStudies.edges.forEach(edge => {
     createPage({
       path: `/${edge.node.lang.substring(0, 2)}/${edge.node.uid}`,
