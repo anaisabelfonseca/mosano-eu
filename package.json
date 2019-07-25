@@ -13,7 +13,9 @@
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
   },
   "dependencies": {
+    "@emotion/core": "^10.0.14",
     "apollo-link-prime": "^0.3.3",
+    "emotion": "^10.0.14",
     "gatsby": "^2.13.15",
     "gatsby-plugin-i18n": "^1.0.1",
     "gatsby-source-graphql": "^2.1.2",

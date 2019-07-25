@@ -73,8 +73,6 @@ export default props => {
       <Footer />
     </div>
   )
-
-  return null
 }
 
 export const pageQuery = graphql`

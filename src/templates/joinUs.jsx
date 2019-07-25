@@ -19,7 +19,7 @@ export default props => {
         const benefitDescription = item.benefits_description.text
 
         return (
-          <div>
+          <div key={item.benefit_title.text}>
             <h3>{benefitTitle}</h3>
             <p>{benefitDescription}</p>
           </div>
@@ -27,10 +27,10 @@ export default props => {
       })
 
       return (
-        <div className="employeee-benefits">
+        <div key={benefitsTitle} className="employeee-benefits">
           <h2>{benefitsTitle}</h2>
           <div>
-            <p>{items}</p>
+            <div>{items}</div>
           </div>
         </div>
       )
@@ -42,7 +42,7 @@ export default props => {
         const offerLink = item.offer_link.url
 
         return (
-          <div>
+          <div key={offerTitle}>
             <ul>
               <a href={'/en' + offerLink}>{offerTitle}</a>
             </ul>
@@ -51,14 +51,16 @@ export default props => {
       })
 
       return (
-        <div className="list-offers">
+        <div key={listTitle} className="list-offers">
           <h2>{listTitle}</h2>
           <div>
-            <p>{items}</p>
+            <div>{items}</div>
           </div>
         </div>
       )
     }
+
+    return null
   })
 
   return (

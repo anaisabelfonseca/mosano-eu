@@ -17,7 +17,7 @@ export default props => {
         <h1>{offerName}</h1>
         <div>
           <p>{jobDesc}</p>
-          <img src={jobImg}></img>
+          <img src={jobImg} alt="Job Offer"></img>
         </div>
       </Layout>
       <Footer />

@@ -37,6 +37,8 @@ export default props => {
         </div>
       )
     }
+
+    return null
   })
 
   return (

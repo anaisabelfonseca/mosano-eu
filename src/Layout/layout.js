@@ -3,7 +3,7 @@ import ArrowImg from './img/up-arrow.png'
 import './layout.css'
 
 const Layout = props => {
-  let language = 'en'
+  var language = 'en'
   if (
     !!props.pageContext &&
     (!!props.pageContext.slug || !!props.pageContext.lang)
@@ -17,6 +17,19 @@ const Layout = props => {
     }
   }
 
+  var homepage = 'Home'
+  var how = 'How'
+  var what = 'What'
+  var who = 'Who'
+  var contact = 'Contact'
+  var joinUs = 'Join Us'
+
+  const renderOption = (langCode, langName) => (
+    <option value={langCode} data-reload>
+      {langName}
+    </option>
+  )
+
   return (
     <div className="viewport">
       <header className="header">
@@ -25,42 +38,53 @@ const Layout = props => {
           <ul>
             <li key="homepage">
               <a href={`/${language}`} id="homepage">
-                Home
+                {homepage}
               </a>
             </li>
             <li key="how">
               <a href={`/${language}/how`} id="how">
-                How
+                {how}
               </a>
             </li>
             <li key="what">
               <a href={`/${language}/what`} id="what">
-                What
+                {what}
               </a>
             </li>
             <li key="who">
               <a href={`/${language}/who`} id="who">
-                Who
+                {who}
               </a>
             </li>
             <li key="contact">
               <a href={`/${language}/contact`} id="contact">
-                Contact
+                {contact}
               </a>
             </li>
             <li key="joinUs">
               <a href={`/${language}/joinus`} id="joinUs">
-                Join Us
+                {joinUs}
               </a>
             </li>
             <li key="lang">
-              <select onChange={e => console.log(e.target.value)}>
-                <option value="en" href="#en-gb" data-reload defaultValue>
-                  English
-                </option>
-                <option value="pt" href="#pt-pt" data-reload>
-                  Português
-                </option>
+              <select
+                onChange={e => {
+                  if (e.target.value === 'pt') {
+                    window.location = `/pt/${props.path.substring(4)}`
+                    homepage = 'Início'
+                    how = 'Como'
+                    what = 'O quê'
+                    who = 'Quem'
+                    contact = 'Contacto'
+                    joinUs = 'Junta-te à equipa'
+                  } else {
+                    window.location = `/en/${props.path.substring(4)}`
+                  }
+                }}
+                value={language}
+              >
+                {renderOption('en', 'English')}
+                {renderOption('pt', 'Português')}
               </select>
             </li>
           </ul>
