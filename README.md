@@ -4,7 +4,9 @@ Since the 8th of July to the 31st, I worked along side with **Mosano** in an int
 
 I used technologies such as Gatsby, Graphql, React, Prismic and Emotion. 
 
-#### Gatsby [![gatsby logo](/gatsby-logo.png)](https://www.gatsbyjs.org/docs "Documentation")
+[![gatsby logo](/gatsby-logo.png)](https://www.gatsbyjs.org/docs "Documentation")
+
+#### Gatsby
 
   Gatsby is a static site generator.
 
