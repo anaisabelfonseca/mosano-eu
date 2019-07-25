@@ -11,7 +11,7 @@ I used technologies such as Gatsby [![gatsby logo](/gatsby-logo.png)](https://ww
  
 #### GraphQL [![graphql logo](GraphQL_Logo.svg.png)](https://graphql.org/learn "Documentation")
 
-  "[GraphQL](https://graphql.org/) is a query language for APIs and a runtime for fulfilling those queries with your existing data. GraphQL provides a complete and understandable description of the data in your API, gives clients the power to ask for exactly what they need and nothing more, makes it easier to evolve APIs over time, and enables powerful developer tools."
+    "[GraphQL](https://graphql.org/) is a query language for APIs and a runtime for fulfilling those queries with your existing data. GraphQL provides a complete and understandable description of the data in your API, gives clients the power to ask for exactly what they need and nothing more, makes it easier to evolve APIs over time, and enables powerful developer tools."
   
   GraphQL allows you to declaratively express your data needs. This is done with queries, queries are the representation of the data you need. An example: 
   
