@@ -41,7 +41,7 @@ Within the project we used [JSX](https://reactjs.org/docs/introducing-jsx.html) 
 
 #### Prismic [![Prismic logo](prismic-logo.png)](https://prismic.io/docs "Documentation")
 
-Prismic in a headless CMS, which is a back-end only content management system (CMS) built from the ground up as a content repository that makes content accessible via a RESTful API for display on any device... which means Prismic provides editing and publishing tools and exposes a powerful API. It is a content database. However, the main focus of Prismic is to give developers the ability to give content freedom to publishers and marketers.
+[Prismic](https://prismic.io/) in a headless CMS, which is a back-end only content management system (CMS) built from the ground up as a content repository that makes content accessible via a RESTful API for display on any device... which means Prismic provides editing and publishing tools and exposes a powerful API. It is a content database. However, the main focus of Prismic is to give developers the ability to give content freedom to publishers and marketers.
 
 #### Emotion [![Emotion logo](emotion-logo.png)](https://emotion.sh/docs/introduction "Documentation")
 
@@ -50,3 +50,6 @@ Prismic in a headless CMS, which is a back-end only content management system (C
 ### Project Description
 
 During my Mosano-EU project I used a variety of technologies that supported my web application. In my web application I have 6 pages: the Homepage, What, Who, How, Contact and Join Us pages.
+
+
+**Contributors:** [Mosano](https://mosano.eu/) [![facebook](/facebook-logo-button.png)](https://facebook.com/mosanotech/ "Facebook") [![instagram](/instagram-logo.png)](https://www.instagram.com/mosanotech/?hl=en "Instagram") [![LinkedIn](/linkedin-logo-button.png)](https://www.linkedin.com/company/mosano "LinkedIn")
