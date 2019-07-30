@@ -4,8 +4,6 @@ import Footer from '../Layout/footer'
 import Layout from '../Layout/layout'
 import '../styles/caseStudy.css'
 
-// const container = css``
-
 //This is where the page layout is
 export default props => {
   const { data } = props

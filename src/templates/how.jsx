@@ -38,11 +38,9 @@ export default props => {
       })
 
       return (
-        <div className="block">
+        <div className="tech">
           <h2>{techsTitle}</h2>
-          <div>
-            <div>{items}</div>
-          </div>
+          <div>{items}</div>
         </div>
       )
     }
@@ -73,7 +71,7 @@ export default props => {
       })
 
       return (
-        <div className="block">
+        <div className="service">
           <h2>{servsTitle}</h2>
           <div>{items}</div>
         </div>
@@ -104,24 +102,25 @@ export default props => {
           )
         }
       })
-
       return (
-        <div className="block">
-          <h2>{procsTitle}</h2>
-          <div>{items}</div>
+        <div className="process">
+          <div>
+            <h2>{procsTitle}</h2>
+            {items}
+          </div>
         </div>
       )
     }
-
-    return null
   })
 
   return (
     <div>
       <Layout {...props}>
         <div className="how-page">
-          <h1>{pageName}</h1>
-          {sections}
+          <div>
+            <h1>{pageName}</h1>
+            <div className="block">{sections}</div>
+          </div>
         </div>
       </Layout>
       <Footer />
@@ -173,7 +172,6 @@ export const pageQuery = graphql`
               service_image {
                 url
               }
-
               service_description {
                 text
               }
@@ -193,7 +191,6 @@ export const pageQuery = graphql`
               process_image {
                 url
               }
-
               process_description {
                 text
               }
