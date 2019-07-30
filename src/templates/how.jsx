@@ -1,6 +1,7 @@
 import React from 'react'
 import Footer from '../Layout/footer'
 import Layout from '../Layout/layout'
+import '../styles/how.css'
 
 //This is where the page layout is
 export default props => {
@@ -13,23 +14,34 @@ export default props => {
       const techsTitle = section.primary.technologies_title.text
       const items = section.items.map(item => {
         const techtitle = item.tech_title.text
-        // LATER ADD IMAGE!!!
-        // const techImage = item.tech_image.url
+        const techImage = item.tech_image.url
         const techDescription = item.tech_description.text
 
-        return (
-          <div>
-            <h3>{techtitle}</h3>
-            <p>{techDescription}</p>
-          </div>
-        )
+        if (techImage) {
+          return (
+            <div className="tech">
+              <h3>{techtitle}</h3>
+              <p>{techDescription}</p>
+              <div className="tech-img">
+                <img src={techImage} alt="Tech"></img>
+              </div>
+            </div>
+          )
+        } else {
+          return (
+            <div className="tech">
+              <h3>{techtitle}</h3>
+              <p>{techDescription}</p>
+            </div>
+          )
+        }
       })
 
       return (
-        <div className="technologies">
+        <div className="block">
           <h2>{techsTitle}</h2>
           <div>
-            <p>{items}</p>
+            <div>{items}</div>
           </div>
         </div>
       )
@@ -39,20 +51,29 @@ export default props => {
       const servsTitle = section.primary.services_title.text
       const items = section.items.map(item => {
         const servtitle = item.service_title.text
-        // LATER ADD IMAGE!!!
-        // const servImage = item.service_image.url
+        const servImage = item.service_image.url
         const servDescription = item.service_description.text
 
-        return (
-          <div>
-            <h3>{servtitle}</h3>
-            <p>{servDescription}</p>
-          </div>
-        )
+        if (servImage) {
+          return (
+            <div className="service">
+              <h3>{servtitle}</h3>
+              <p>{servDescription}</p>
+              <img src={servImage} alt="Service"></img>
+            </div>
+          )
+        } else {
+          return (
+            <div className="service">
+              <h3>{servtitle}</h3>
+              <p>{servDescription}</p>
+            </div>
+          )
+        }
       })
 
       return (
-        <div className="services">
+        <div className="block">
           <h2>{servsTitle}</h2>
           <div>{items}</div>
         </div>
@@ -63,20 +84,29 @@ export default props => {
       const procsTitle = section.primary.processes_title.text
       const items = section.items.map(item => {
         const proctitle = item.process_title.text
-        // LATER ADD IMAGE!!!
-        // const procImage = item.process_image.url
+        const procImage = item.process_image.url
         const procDescription = item.process_description.text
 
-        return (
-          <div>
-            <h3>{proctitle}</h3>
-            <p>{procDescription}</p>
-          </div>
-        )
+        if (procImage) {
+          return (
+            <div className="process">
+              <h3>{proctitle}</h3>
+              <p>{procDescription}</p>
+              <img src={procImage} alt="Process"></img>
+            </div>
+          )
+        } else {
+          return (
+            <div className="process">
+              <h3>{proctitle}</h3>
+              <p>{procDescription}</p>
+            </div>
+          )
+        }
       })
 
       return (
-        <div className="processes">
+        <div className="block">
           <h2>{procsTitle}</h2>
           <div>{items}</div>
         </div>
@@ -89,7 +119,7 @@ export default props => {
   return (
     <div>
       <Layout {...props}>
-        <div>
+        <div className="how-page">
           <h1>{pageName}</h1>
           {sections}
         </div>
@@ -120,9 +150,7 @@ export const pageQuery = graphql`
                 text
               }
               tech_image {
-                localFile {
-                  url
-                }
+                url
               }
               tech_description {
                 text
@@ -141,6 +169,11 @@ export const pageQuery = graphql`
               service_title {
                 text
               }
+
+              service_image {
+                url
+              }
+
               service_description {
                 text
               }
@@ -158,10 +191,9 @@ export const pageQuery = graphql`
                 text
               }
               process_image {
-                localFile {
-                  url
-                }
+                url
               }
+
               process_description {
                 text
               }

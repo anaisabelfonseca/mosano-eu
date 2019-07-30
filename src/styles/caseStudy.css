@@ -1,0 +1,20 @@
+.general {
+  text-align: justify;
+  width: 40%;
+}
+
+.case-study {
+  padding: 40px;
+}
+
+.general h1 {
+  font-family: sans-serif;
+  text-decoration-line: underline overline;
+  text-transform: uppercase;
+  text-align: left;
+  padding: 25px;
+}
+
+.general p {
+  text-indent: 20%;
+}

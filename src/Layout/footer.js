@@ -4,7 +4,9 @@ import './footer.css'
 const Footer = () => {
   return (
     <footer>
-      <p>Copyright &copy; 2019, Mosano</p>
+      <p style={{ marginTop: 0, marginBottom: 0 }}>
+        Copyright &copy; 2019, Mosano
+      </p>
     </footer>
   )
 }

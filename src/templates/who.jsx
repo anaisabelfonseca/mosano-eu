@@ -1,6 +1,7 @@
 import React from 'react'
 import Footer from '../Layout/footer'
 import Layout from '../Layout/layout'
+import '../styles/who.css'
 
 //This is where the page layout is
 export default props => {
@@ -15,13 +16,11 @@ export default props => {
       const valuesTitle = section.primary.values_title.text
       const items = section.items.map(item => {
         const valuetitle = item.value_title.text
-        // LATER ADD IMAGE!!!
-        // const techImage = item.tech_image.url
         const valueDescription = item.description.text
 
         return (
-          <div>
-            <h3>{valuetitle}</h3>
+          <div className="each-value">
+            <h4>{valuetitle}</h4>
             <p>{valueDescription}</p>
           </div>
         )
@@ -30,9 +29,7 @@ export default props => {
       return (
         <div className="values">
           <h2>{valuesTitle}</h2>
-          <div>
-            <p>{items}</p>
-          </div>
+          <div className="each-value-items">{items}</div>
         </div>
       )
     }
@@ -41,21 +38,37 @@ export default props => {
       const teamsTitle = section.primary.team_title.text
       const items = section.items.map(item => {
         const personName = item.person_name.text
-        // LATER ADD IMAGE!!!
-        // const servImage = item.service_image.url
+        const personImage = item.person_picture.url
 
-        return (
-          <div>
-            <h3>{teamsTitle}</h3>
-            <p>{personName}</p>
-          </div>
-        )
+        if (personImage) {
+          return (
+            <div className="person">
+              <img
+                src={personImage}
+                alt="Team member"
+                class="hover-stuff"
+              ></img>
+              <div className="name">
+                <div class="hover-text">{personName}</div>
+              </div>
+            </div>
+          )
+        } else {
+          return (
+            <div className="person">
+              <h3>{teamsTitle}</h3>
+              <div className="name">
+                <div class="hover-stuff">{personName}</div>
+              </div>
+            </div>
+          )
+        }
       })
 
       return (
         <div className="team">
           <h2>{teamsTitle}</h2>
-          <div>{items}</div>
+          <div className="overall-team">{items}</div>
         </div>
       )
     }
@@ -66,9 +79,9 @@ export default props => {
   return (
     <div>
       <Layout {...props}>
-        <div>
+        <div className="who-page">
           <h1>{pageName}</h1>
-          {sections}
+          <div className="who-content">{sections}</div>
         </div>
       </Layout>
       <Footer />
@@ -93,6 +106,9 @@ export const pageQuery = graphql`
               }
             }
             items {
+              person_picture {
+                url
+              }
               person_name {
                 text
               }

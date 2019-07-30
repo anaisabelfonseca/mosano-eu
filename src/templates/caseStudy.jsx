@@ -2,6 +2,7 @@ import { graphql } from 'gatsby'
 import React from 'react'
 import Footer from '../Layout/footer'
 import Layout from '../Layout/layout'
+import '../styles/caseStudy.css'
 
 // const container = css``
 
@@ -11,18 +12,39 @@ export default props => {
   const content = data.prismicCaseStudies.data
   const offerName = content.case_study_title.text
   const jobDesc = content.description.text
+  const caseImg = content.case_study_image.url
 
-  return (
-    <div>
-      <Layout {...props}>
-        <h1>{offerName}</h1>
-        <div>
-          <p>{jobDesc}</p>
+  if (caseImg) {
+    return (
+      <div>
+        <div className="general">
+          <Layout {...props}>
+            <h1>{offerName}</h1>
+            <div className="case-study">
+              <p>{jobDesc}</p>
+              <img src={caseImg} alt="Case Study"></img>
+            </div>
+          </Layout>
         </div>
-      </Layout>
-      <Footer />
-    </div>
-  )
+        <Footer />
+      </div>
+    )
+  } else {
+    return (
+      <div>
+        <div className="general">
+          <Layout {...props}>
+            <h1>{offerName}</h1>
+            <div className="case-study">
+              <p>{jobDesc}</p>
+            </div>
+          </Layout>
+          <Footer />
+        </div>
+        <Footer />
+      </div>
+    )
+  }
 }
 
 //This is the query that retrieves all the contact page's information

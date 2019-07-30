@@ -1,0 +1,126 @@
+.who-page {
+  display: flex;
+  flex-flow: column;
+}
+
+.who-page h1 {
+  font-family: sans-serif;
+  text-decoration-line: underline overline;
+  text-transform: uppercase;
+  text-align: left;
+  padding: 25px;
+}
+
+.who-page h2 {
+  padding: 10px;
+  font-family: sans-serif;
+  font-weight: 400;
+  text-transform: capitalize;
+  text-decoration-line: underline;
+}
+
+.who-content {
+  display: flex;
+  flex-flow: column;
+  flex-wrap: wrap;
+  padding-left: 100px;
+  padding-right: 10px;
+}
+
+.values {
+  display: flex;
+  flex-flow: row;
+  flex-wrap: wrap;
+}
+
+.each-value-items {
+  padding-top: 50px;
+  width: 100%;
+  display: flex;
+  flex-flow: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.each-value {
+  display: flex;
+  flex-flow: column;
+  flex-wrap: wrap;
+}
+
+.each-value h4 {
+  padding: 15px;
+  color: #aeaeae;
+  font-family: sans-serif;
+  text-align: center;
+  border: 1px solid #f3f3f3;
+  background-color: #f1f1f1;
+}
+
+.team {
+  width: 100%;
+  padding-top: 80px;
+  display: flex;
+  flex-flow: row;
+  flex-wrap: wrap;
+}
+
+.overall-team {
+  width: 100%;
+  padding: 40px;
+  display: flex;
+  flex-flow: row;
+  flex-wrap: wrap;
+}
+
+/* Making text appear when image is hovered */
+.person * {
+  /* this */
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  justify-content: center;
+  /* width: 25%; */
+}
+
+.person {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  max-width: 100%;
+  height: auto;
+}
+
+.person img {
+  padding: 30px;
+  max-width: 100%;
+}
+
+.person .hover-stuff {
+  display: block;
+  text-align: center;
+}
+
+.person .name {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  padding: 15px;
+  -moz-transition: all 0.4s ease-in-out 0s;
+  -webkit-transition: all 0.4s ease-in-out 0s;
+  -ms-transition: all 0.4s ease-in-out 0s;
+  transition: all 0.4s ease-in-out 0s;
+}
+
+.person:hover .name,
+.person:active .name {
+  opacity: 1;
+}

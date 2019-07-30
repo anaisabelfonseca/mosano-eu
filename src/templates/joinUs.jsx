@@ -2,38 +2,45 @@ import { graphql } from 'gatsby'
 import React from 'react'
 import Footer from '../Layout/footer'
 import Layout from '../Layout/layout'
-
-// const container = css``
+import '../styles/joinUs.css'
 
 //This is where the page layout is
 export default props => {
   const { data } = props
   const content = data.prismicJoinus.data
   const pageName = content.title.text
+  const lang = data.prismicJoinus.lang.split('-')[0]
 
   const sections = content.body.map(section => {
     if (section.slice_type === 'employee_benefits') {
       const benefitsTitle = section.primary.employee_benefits_title.text
       const items = section.items.map(item => {
         const benefitTitle = item.benefit_title.text
-        // LATER ADD IMAGE!!!
-        // const techImage = item.tech_image.url
+        const benefitImage = item.benefit_image.url
         const benefitDescription = item.benefits_description.text
 
-        return (
-          <div key={item.benefit_title.text}>
-            <h3>{benefitTitle}</h3>
-            <p>{benefitDescription}</p>
-          </div>
-        )
+        if (benefitImage) {
+          return (
+            <div className="benefit">
+              <h3>{benefitTitle}</h3>
+              <p>{benefitDescription}</p>
+              <img src={benefitImage} alt="benefit"></img>
+            </div>
+          )
+        } else {
+          return (
+            <div className="benefit">
+              <h3>{benefitTitle}</h3>
+              <p>{benefitDescription}</p>
+            </div>
+          )
+        }
       })
 
       return (
-        <div key={benefitsTitle} className="employeee-benefits">
+        <div className="employee-benefits">
           <h2>{benefitsTitle}</h2>
-          <div>
-            <div>{items}</div>
-          </div>
+          <div className="benf">{items}</div>
         </div>
       )
     }
@@ -42,21 +49,39 @@ export default props => {
       const items = section.items.map(item => {
         const offerTitle = item.offer_title.text
         const offerLink = item.offer_link.url
+        const offerImg = item.offer_image.url
 
-        return (
-          <div key={offerTitle}>
-            <ul>
-              <a href={'/en' + offerLink}>{offerTitle}</a>
-            </ul>
-          </div>
-        )
+        if (offerImg) {
+          return (
+            <div>
+              <ul>
+                <a href={'/' + lang + offerLink}>
+                  <h3>{offerTitle}</h3>
+                </a>
+              </ul>
+              <a href={'/' + lang + offerLink}>
+                <img src={offerImg} alt="offer"></img>
+              </a>
+            </div>
+          )
+        } else {
+          return (
+            <div>
+              <ul>
+                <a href={'/' + lang + offerLink}>
+                  <h3>{offerTitle}</h3>
+                </a>
+              </ul>
+            </div>
+          )
+        }
       })
 
       return (
-        <div key={listTitle} className="list-offers">
+        <div className="list-offers">
           <h2>{listTitle}</h2>
           <div>
-            <div>{items}</div>
+            <div className="offers">{items}</div>
           </div>
         </div>
       )
@@ -68,8 +93,10 @@ export default props => {
   return (
     <div>
       <Layout {...props}>
-        <h1>{pageName}</h1>
-        <div>{sections}</div>
+        <div className="joinUs-content">
+          <h1>{pageName}</h1>
+          <div className="secs">{sections}</div>
+        </div>
       </Layout>
       <Footer />
     </div>
@@ -93,6 +120,9 @@ export const pageQuery = graphql`
               }
             }
             items {
+              benefit_image {
+                url
+              }
               benefit_title {
                 text
               }
@@ -109,6 +139,9 @@ export const pageQuery = graphql`
               }
             }
             items {
+              offer_image {
+                url
+              }
               offer_title {
                 text
               }
@@ -119,6 +152,7 @@ export const pageQuery = graphql`
           }
         }
       }
+      lang
     }
   }
 `

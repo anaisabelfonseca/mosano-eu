@@ -1,0 +1,86 @@
+.what-page {
+  display: flex;
+  /* flex-direction: column;
+  height: 100%; */
+  /* flex-wrap: wrap; */
+  /* flex-flow: row; */
+}
+
+.what-page h1 {
+  font-family: sans-serif;
+  text-decoration-line: underline overline;
+  text-transform: uppercase;
+  text-align: left;
+  padding: 25px;
+}
+
+.case-studies {
+  padding-top: 90px;
+}
+
+.case-studies h2 {
+  font-family: sans-serif;
+  font-weight: 400;
+  text-transform: capitalize;
+  text-decoration-line: underline;
+}
+
+.case-studies a {
+  color: black;
+  text-decoration: none;
+  font-family: sans-serif;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+.bigger-what-block {
+  float: left;
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 0px;
+  box-sizing: border-box;
+}
+
+.block-what {
+  max-width: 450px;
+  background-color: #f3f3f3;
+  width: 35%;
+  padding: 10px;
+  margin: 60px;
+  justify-content: center;
+  display: flex;
+  /* padding-right: 50px; */
+}
+
+.block-what:hover {
+  color: black;
+  flex-grow: 2;
+  transition: flex-grow 0.5s;
+}
+
+.collapse {
+  flex-grow: 0.001;
+}
+
+.media {
+  min-width: 0;
+  margin: 5px;
+}
+
+.block-what img {
+  width: 450px;
+  max-width: 100%;
+  max-height: 450px;
+}
+
+.block-what h2 {
+  font-family: sans-serif;
+  font-weight: 400;
+  text-transform: capitalize;
+  text-decoration-line: underline;
+}
+
+.block-what p {
+  text-indent: 20%;
+  text-align: justify;
+}

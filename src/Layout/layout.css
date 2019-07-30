@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Work+Sans:300,600');
 
 :root {
-  --background: rgba(32, 46, 71, 1);
+  --background: black;
 }
 
 *,
@@ -31,15 +31,17 @@ body {
 
 header {
   background: var(--background);
-  text-align: center;
+  /* text-align: center; */
+  display: flex;
+  flex-wrap: wrap;
   position: fixed;
   z-index: 999;
   width: 100%;
-  height: 70px;
+  height: 63px;
 }
 
 .page-content {
-  padding-top: 70px;
+  padding-top: 63px;
 }
 
 .button {
@@ -93,7 +95,7 @@ header {
 }
 
 nav {
-  position: absolute;
+  /* position: absolute; */
   text-align: left;
   top: 100%;
   left: 0;
@@ -172,10 +174,12 @@ nav a:hover {
 
   nav ul {
     display: flex;
+
+    justify-content: space-around;
   }
 
   nav li {
-    margin-left: 3em;
+    margin-left: 2em;
     margin-bottom: 1px;
   }
 
@@ -199,6 +203,27 @@ nav a:hover {
 
   nav a:hover::before {
     transform: scale(1, 1);
+  }
+
+  .dropdown-dark {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+      'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background: black;
+    border-color: #111111 #0a0a0a black;
+  }
+
+  .dropdown-dark:before {
+    border-bottom-color: black;
+  }
+
+  .dropdown-dark:after {
+    border-top-color: black;
+  }
+
+  .dropdown-dark .select-language {
+    color: white;
+    text-shadow: 0 1px black;
+    background: black; /* Fallback for IE 8 */
   }
 }
 

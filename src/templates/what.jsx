@@ -2,6 +2,7 @@ import { graphql } from 'gatsby'
 import React from 'react'
 import Footer from '../Layout/footer'
 import Layout from '../Layout/layout'
+import '../styles/what.css'
 
 // const container = css``
 
@@ -19,23 +20,34 @@ export default props => {
         const caseTitle = item.case_study_title.text
         const caseDescription = item.description.text
         const caseLink = item.case_link.url
+        const caseImg = item.image.url
 
-        return (
-          <div>
-            <ul>
-              <a href={'/en' + caseLink}>{caseTitle}</a>
-              <p>{caseDescription}</p>
-            </ul>
-          </div>
-        )
+        if (caseImg) {
+          return (
+            <div className="block-what">
+              <ul>
+                <a href={'/en' + caseLink}>{caseTitle}</a>
+                <p>{caseDescription}</p>
+                <img src={caseImg} alt="Case Study Image"></img>
+              </ul>
+            </div>
+          )
+        } else {
+          return (
+            <div className="block-what">
+              <ul>
+                <a href={'/en' + caseLink}>{caseTitle}</a>
+                <p>{caseDescription}</p>
+              </ul>
+            </div>
+          )
+        }
       })
 
       return (
         <div className="case-studies">
           <h2>{casesTitle}</h2>
-          <div>
-            <p>{items}</p>
-          </div>
+          <div className="bigger-what-block">{items}</div>
         </div>
       )
     }
@@ -46,10 +58,12 @@ export default props => {
   return (
     <div>
       <Layout {...props}>
-        <h1>{pageName}</h1>
-        <div>{sections}</div>
+        <div className="what-page">
+          <h1>{pageName}</h1>
+          <div>{sections}</div>
+        </div>
+        <Footer />
       </Layout>
-      <Footer />
     </div>
   )
 }
@@ -79,6 +93,9 @@ export const pageQuery = graphql`
                 text
               }
               case_link {
+                url
+              }
+              image {
                 url
               }
             }

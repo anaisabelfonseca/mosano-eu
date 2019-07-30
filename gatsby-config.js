@@ -18,13 +18,12 @@ module.exports = {
         linkResolver: ({ node, key, value }) => post => `/${post.uid}`,
       },
     },
-    /*
+
     {
-      resolve: 'gatsby-plugin-i18n',
-      options: {        
-        langKeyDefault: 'en',
-        useLangKeyLayout: false
-      }
-    },*/
+      resolve: 'gatsby-plugin-env-variables',
+      options: {
+        whitelist: ['GOOGLE_KEY'],
+      },
+    },
   ],
 }

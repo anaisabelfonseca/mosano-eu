@@ -2,6 +2,7 @@ import { graphql } from 'gatsby'
 import React from 'react'
 import Footer from '../Layout/footer'
 import Layout from '../Layout/layout'
+import '../styles/caseStudy.css'
 
 // const container = css``
 
@@ -13,18 +14,36 @@ export default props => {
   const jobDesc = content.job_description.text
   const jobImg = content.job_image.url
 
-  return (
-    <div>
-      <Layout {...props}>
-        <h1>{offerName}</h1>
-        <div>
-          <p>{jobDesc}</p>
-          <img src={jobImg} alt="Job Offer"></img>
+  if (jobImg) {
+    return (
+      <div>
+        <div className="general">
+          <Layout {...props}>
+            <h1>{offerName}</h1>
+            <div className="case-study">
+              <p>{jobDesc}</p>
+              <img src={jobImg} alt="Job Offer"></img>
+            </div>
+          </Layout>
         </div>
-      </Layout>
-      <Footer />
-    </div>
-  )
+        <Footer />
+      </div>
+    )
+  } else {
+    return (
+      <div>
+        <div className="general">
+          <Layout {...props}>
+            <h1>{offerName}</h1>
+            <div>
+              <p>{jobDesc}</p>
+            </div>
+          </Layout>
+        </div>
+        <Footer />
+      </div>
+    )
+  }
 }
 
 //This is the query that retrieves all the job offer page's information

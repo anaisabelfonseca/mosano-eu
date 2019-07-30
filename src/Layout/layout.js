@@ -29,9 +29,7 @@ const Layout = props => {
   /* This is to guarantee that when the user chooses language the 
   selected option in the nav bar will be the same accordingly */
   const renderOption = (langCode, langName) => (
-    <option value={langCode} data-reload>
-      {langName}
-    </option>
+    <option value={langCode}>{langName}</option>
   )
 
   return (
@@ -71,25 +69,28 @@ const Layout = props => {
               </a>
             </li>
             <li key="lang">
-              <select
-                onChange={e => {
-                  if (e.target.value === 'pt') {
-                    window.location = `/pt/${props.path.substring(4)}`
-                    homepage = 'Início'
-                    how = 'Como'
-                    what = 'O quê'
-                    who = 'Quem'
-                    contact = 'Contacto'
-                    joinUs = 'Junta-te à equipa'
-                  } else {
-                    window.location = `/en/${props.path.substring(4)}`
-                  }
-                }}
-                value={language}
-              >
-                {renderOption('en', 'English')}
-                {renderOption('pt', 'Português')}
-              </select>
+              <div className="dropdown-dark">
+                <select
+                  className="select-language"
+                  onChange={e => {
+                    if (e.target.value === 'pt') {
+                      window.location = `/pt/${props.path.substring(4)}`
+                      homepage = 'Início'
+                      how = 'Como'
+                      what = 'O quê'
+                      who = 'Quem'
+                      contact = 'Contacto'
+                      joinUs = 'Junta-te à equipa'
+                    } else {
+                      window.location = `/en/${props.path.substring(4)}`
+                    }
+                  }}
+                  value={language}
+                >
+                  {renderOption('en', 'English')}
+                  {renderOption('pt', 'Português')}
+                </select>
+              </div>
             </li>
           </ul>
         </nav>
