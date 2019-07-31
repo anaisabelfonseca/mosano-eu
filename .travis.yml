@@ -1,0 +1,16 @@
+language: node_js
+
+cache:
+  directories: 
+    - node_modules
+
+script: 
+  - gatsby develop
+
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  keep_history: true
+    on:
+      branch: master
