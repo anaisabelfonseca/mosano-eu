@@ -4,7 +4,7 @@ Since the 8th of July to the 31st, I worked along side with **Mosano** in an int
 
 ### Technologies
 
-I used technologies such as Gatsby [![gatsby logo](/gatsby-logo.png)](https://www.gatsbyjs.org/docs "Documentation") , Graphql [![graphql logo](GraphQL_Logo.svg.png)](https://graphql.org/learn "Documentation"), React [![react logo](React.js_logo-512.png)](https://reactjs.org/docs/getting-started.html#learn-react "Documentation"), Prismic [![Prismic logo](prismic-logo.png)](https://prismic.io/docs "Documentation") and Emotion [![Emotion logo](emotion-logo.png)](https://emotion.sh/docs/introduction "Documentation").
+I used technologies such as Gatsby [![gatsby logo](/gatsby-logo.png)](https://www.gatsbyjs.org/docs "Documentation") , Graphql [![graphql logo](GraphQL_Logo.svg.png)](https://graphql.org/learn "Documentation"), React [![react logo](React.js_logo-512.png)](https://reactjs.org/docs/getting-started.html#learn-react "Documentation") and Prismic [![Prismic logo](prismic-logo.png)](https://prismic.io/docs "Documentation").
 
 
 #### Gatsby [![gatsby logo](/gatsby-logo.png)](https://www.gatsbyjs.org/docs "Documentation") 
@@ -43,9 +43,6 @@ Within the project we used [JSX](https://reactjs.org/docs/introducing-jsx.html) 
 
 [Prismic](https://prismic.io/) in a headless CMS, which is a back-end only content management system (CMS) built from the ground up as a content repository that makes content accessible via a RESTful API for display on any device... which means Prismic provides editing and publishing tools and exposes a powerful API. It is a content database. However, the main focus of Prismic is to give developers the ability to give content freedom to publishers and marketers.
 
-#### Emotion [![Emotion logo](emotion-logo.png)](https://emotion.sh/docs/introduction "Documentation")
-
-[Emotion](https://github.com/emotion-js/emotion) is a performant and flexible CSS-in-JS library. Building on many other CSS-in-JS libraries, it allows you to style apps quickly with string or object styles. It has predictable composition to avoid specificity issues with CSS. With source maps and labels, Emotion has a great developer experience and great performance with heavy caching in production.
 
 ### Project Description
 
