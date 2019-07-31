@@ -43,6 +43,7 @@ Within the project we used [JSX](https://reactjs.org/docs/introducing-jsx.html) 
 
 [Prismic](https://prismic.io/) in a headless CMS, which is a back-end only content management system (CMS) built from the ground up as a content repository that makes content accessible via a RESTful API for display on any device... which means Prismic provides editing and publishing tools and exposes a powerful API. It is a content database. However, the main focus of Prismic is to give developers the ability to give content freedom to publishers and marketers.
 
+
 ### Project Description
 
 During my Mosano-EU project I used a variety of technologies that supported my web application. In my web application I have 6 pages: the Homepage, What, Who, How, Contact and Join Us pages. In each of these the content isn't specified.
